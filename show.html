@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>滔涛的展示</title>
+    <link rel="SHORTCUT ICON" href="pic/china.ico"/>
+    <link rel="stylesheet" href="奥森字体4.2.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/tongY.css">
+    <script type="text/javascript" src="js/jquery-3.1.0.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script src="js/loadMusic.js"></script>
+    <style>
+        legend{
+            border-style: dotted;
+            padding-bottom: 3px;
+        }
+        legend>a{
+            float: right;
+            position: relative;
+            top: 20px;
+        }
+        legend:first-letter{
+            font-size: 40px;
+            font-style: italic;
+            font-weight: bolder;
+        }
+        .example-frame{
+            width: 100%;
+            height: 500px;
+            padding-top: 3px;
+            border-top: none;
+            border-left: 1px solid black;
+            border-right: 1px solid black;
+            border-bottom: 1px solid black;
+            overflow-y: scroll;
+        }
+        .example-p{
+            text-indent: 2em;
+            margin: 0;
+        }
+
+
+        @media screen and (max-width: 768px){
+            .navbar-brand::after{
+                content: 'Some example which i done';
+                font-size: 12px;
+                font-style: italic;
+                opacity: 0.8;
+                position: relative;
+                top: -5px;
+                left: 10px;
+            }
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            loadBGM();
+        })
+    </script>
+</head>
+<body>
+<hr id="top"/>
+<div class="container">
+    <div class="navbar navbar-default" style="border: none;margin: 0">
+        <div class="navbar-header">
+            <a href="index.html" class="navbar-brand" data-skip="true">
+                <i class="fa fa-leaf" style="font-size: 25px" data-skip="true"></i>
+            </a>
+            <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse navbar-responsive-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="note.html" data-skip="true">笔记</a></li>
+                <li>
+                    <a href="show.html" class="currAnchor" data-toggle="dropdown">展示<i class="fa fa-sort-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#jp" data-skip="true">jquery+php</a></li>
+                        <li><a href="#cw" data-skip="true">classWork</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#mzh" data-skip="true">Mr.Zhang homework</a></li>
+                    </ul>
+                </li>
+                <li><a href="life.html" data-skip="true">生活</a></li>
+                <li><a href="#m1" data-toggle="modal">关于我</a></li>
+                <li>
+                </li>
+            </ul>
+            <div class="has-feedback col-xs-12 col-sm-4 col-md-4 col-lg-4" style="margin: 8px;padding: 0;float: right">
+                <input type="search" class="form-control" placeholder="帅气涛的前端之旅">
+                <span class="glyphicon glyphicon-search form-control-feedback"></span>
+            </div>
+        </div>
+    </div>
+    <!--  以上是导航  -->
+    <br/><br/><br/>
+    <fieldset id="jp">
+        <legend>j query+php<a href="../jquery+php/index.html"><i class="fa fa-eye"></i></a></legend>
+        <p class="example-p">
+            用半熟的jquery和不知深浅的php，对着书上敲的代码
+        </p>
+        <iframe src="../jquery+php/index.html" class="example-frame"></iframe>
+    </fieldset>
+    <br/><br/><br/>
+    <fieldset id="cw">
+        <legend>c lassWork<a href="../classWork/index.html"><i class="fa fa-eye"></i></a> </legend>
+        <p class="example-p">一个课程设计，网络爬虫。主程序用python设计的，参考的是慕课网上的一个简单案例
+        ，然后爬取百度文库里的文章以及相关的一些资料
+        </p>
+        <iframe src="../classWork/index.html" class="example-frame"></iframe>
+    </fieldset>
+    <br/><br/><br/>
+    <fieldset id="mzh">
+        <legend>M r.Zhang homework<a href="../Mr.Zhang%20homework/content.html"><i class="fa fa-eye"></i></a> </legend>
+        <p class="example-p">这是猪大头(要是被他看到这三个字估计要被打)的课程设计，由于这比天天打撸，所以老师
+        教他的html，asp啥的都当耳边风了，我这用的是php写的一个学生成绩管理系统，只有最基础的增删改查功能
+        </p>
+        <iframe src="../Mr.Zhang%20homework/content.html" class="example-frame"></iframe>
+    </fieldset>
+</div>
+<br/><br/>
+<footer class="jumbotron">
+    <label class="footer-info">
+        <i class="fa fa-copyright"></i> &nbsp;皖ICP备16016097号<br/>
+        <i class="fa fa-clock-o"></i> &nbsp;2017.3.31 <i>— 滔涛</i>
+    </label>
+    <label class="footer-info">
+        <i class="fa fa-qq"></i> &nbsp;1941639715<br/>
+        <i class="fa fa-envelope"></i> &nbsp;1941639715@qq.com
+    </label>
+</footer>
+<!--  脚注信息  -->
+<div class="modal fade" id="m1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close" data-dismiss="modal">&times;</button>
+                <h4>关于帅气涛</h4>
+            </div>
+            <div class="modal-body">
+                <p>哈哈哈，什么也没有，只知道长得很帅！</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-default" id="thank-btn"><i class="fa fa-thumbs-up"></i></button>
+                <a href="comment.html" class="btn btn-default" data-skip="true"><i class="fa fa-comments"></i></a>
+                <div class="collapse" id="thank" style="text-align: center">
+                    <img src="pic/跪谢.gif" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--  以上是对话框  -->
+</body>
+</html>

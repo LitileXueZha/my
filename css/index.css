@@ -1,0 +1,257 @@
+.currAnchor{
+    color: green !important;
+    font-weight: bold;
+}
+
+
+hr{
+    margin-bottom: 0;
+}
+.table-hover>tbody>tr:hover{
+    background: rgba(245, 245, 245, 0.47);
+}
+.nav.navbar-nav>li>a{
+    transition: 1s ease-out;
+}
+.nav.navbar-nav>li>a:hover{
+    background-color: #eee;
+    transition: 1s ease-in;
+}
+.glyphicon-search.form-control-feedback{
+    pointer-events: auto;
+    cursor: pointer;
+}
+.fa.fa-sort-down{
+    position: relative;
+    top: -3px;
+    left: 1px;
+}
+
+#prev, #next{
+    display: block;
+    position: absolute;
+    width: 50px;
+    height: 100px;
+    z-index: 999;
+    top: 40%;
+}
+#prev{
+    left: 4%;
+}
+#next{
+    right: 4%;
+}
+#next div, #prev div{
+    position: absolute;
+    height: 30px;
+    width: 2px;
+    left: 24px;
+    background: white;
+    border-radius: 2px;
+    transition: 0.5s;
+}
+#prev div:nth-child(1){
+    width: 0;
+    height: 237px;
+    left: -46px;
+    top: -189px;
+}
+#prev div:nth-last-child(1){
+    width: 0;
+    height: 237px;
+    left: -46px;
+    top: 49px;
+}
+#next div:nth-child(1){
+    width: 0;
+    height: 237px;
+    left: 94px;
+    top: -189px;
+}
+#next div:nth-last-child(1){
+    width: 0;
+    height: 237px;
+    left: 94px;
+    top: 49px;
+}
+#next:hover div, #prev:hover div{
+    background: yellow;
+}
+#carousel:hover #prev div:nth-child(1){
+    height: 30px;
+    width: 2px;
+    left: 24px;
+    top: 25px;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+#carousel:hover #prev div:nth-last-child(1){
+    height: 30px;
+    width: 2px;
+    left: 24px;
+    top: 45px;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+#carousel:hover #next div:nth-child(1){
+    height: 30px;
+    width: 2px;
+    left: 24px;
+    top: 25px;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+#carousel:hover #next div:nth-last-child(1){
+    height: 30px;
+    width: 2px;
+    left: 24px;
+    top: 45px;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.carousel-indicators>li{
+    width: 20px;
+    height: 0;
+    border-color: black ;
+}
+.carousel-indicators>li.active{
+    width: 20px;
+    border-color: white;
+    height: 0;
+}
+.article-p{
+    padding: 0 10px;
+    text-indent: 2em;
+    word-break: break-all;
+}
+.img-shadow{
+    position: absolute;
+    bottom: 0;
+    right: 35%;
+    border-radius: 50%;
+    width: 100px;
+    height: 10px;
+    background: radial-gradient(rgba(0, 0, 0, 0.2), rgba(0,0,0,0.1), white);
+}
+.js-list{
+    list-style-image: url("../pic/右脚.png");
+}
+.js-list-item{
+    padding: 5px;
+}
+.js-bq{
+    padding-bottom: 0;
+}
+.js-bq span{
+    font-size: 14px;
+    font-weight: normal;}
+/*  以上是javascript程序设计介绍  */
+
+.tab-content{
+    position: relative;
+    /*background: white;*/
+}
+.further-background{
+    z-index: -1;
+    /*opacity: 0.9;*/
+}
+.nav>li.active>a{
+    background-color: rgba(0,0,0,0.1) !important;
+}
+.tab-pane{
+    height: 50%;
+    position: absolute;
+    top: 20%;
+    padding: 1% 19%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.tab-pane p{
+    text-indent: 2em;
+    word-break: break-all;
+}
+.tab-content{
+    background: white;
+}
+.panel table, .panel table th{
+    text-align: center;
+}
+.panel>table a{
+    display: block;
+    width: 100%;
+}
+.panel-body-p{
+    margin: 0;
+    padding: 15px 15px 0 15px;
+    word-break: break-all;
+    text-indent: 2em;
+}
+.panel-black{
+    border: 1px solid rgb(51,0,0);
+}
+.panel-black>.panel-heading{
+    background: rgb(51,0,0);
+    color: rgb(0,255,255);
+}  /*  自定义面板颜色  */
+/*  以上是两个网站介绍  */
+.life-table>tbody>tr>th, .note-table>tbody>tr>th{
+    text-indent: 2em;
+}
+.life-table>thead>tr>th:nth-last-child(1), .note-table>thead>tr>th:nth-last-child(1){
+    text-align: right;
+}
+/*  以上是生活样式  */
+footer.jumbotron{
+    margin-bottom: 0;
+    text-align: center;
+}
+.footer-info{
+    margin-bottom: 0;
+    text-align: start;
+    font-size: 12px;
+    padding: 2px 0 2px 20px;
+    display: inline-block;
+    width: 170px;
+    font-weight: normal;
+}
+.footer-info>i{
+    font-size: 13px;
+}
+
+@media screen and (min-width: 992px){
+    body{
+        background-image: url("../pic/bg-pc.jpg") !important;
+        background-attachment: fixed;
+    }
+}
+/*  大屏幕，电脑样式  */
+@media screen and (min-width: 768px) and (max-width: 992px){
+
+}
+/*!*  平板样式  *!*/
+@media screen and (max-width: 768px){
+    .carousel-indicators>li, .carousel-indicators>li.active{
+        width: 15px;
+    }
+    .tab-pane{
+        position: relative;
+        padding: 10px;
+    }
+    .panel-body-p{
+        padding: 15px 0 0 0;
+    }
+}
+/*  手机样式  */

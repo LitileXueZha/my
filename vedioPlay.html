@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>滔涛的电影室</title>
+    <link rel="SHORTCUT ICON" href="pic/china.ico"/>
+    <link rel="stylesheet" href="奥森字体4.2.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/tongY.css">
+    <link rel="stylesheet" href="css/vedioPlay.css"/>
+    <script type="text/javascript" src="js/jquery-3.1.0.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script src="js/vedioPlay.js"></script>
+</head>
+<body>
+<hr id="top"/>
+<div class="container">
+    <div class="navbar navbar-default" style="border: none;margin: 0">
+        <div class="navbar-header">
+            <a href="index.html" class="navbar-brand">
+                <i class="fa fa-leaf" style="font-size: 25px"></i>
+            </a>
+            <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse navbar-responsive-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="note.html">笔记</a></li>
+                <li>
+                    <a href="show.html" data-toggle="dropdown">展示<i class="fa fa-sort-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="show.html#jp">jquery+php</a></li>
+                        <li><a href="show.html#cw">classWork</a></li>
+                        <li class="divider"></li>
+                        <li><a href="show.html#mzh">Mr.Zhang homework</a></li>
+                    </ul>
+                </li>
+                <li><a href="life.html">生活</a></li>
+                <li><a href="#m1" data-toggle="modal">关于我</a></li>
+                <li>
+                </li>
+            </ul>
+            <div class="has-feedback col-xs-12 col-sm-4 col-md-4 col-lg-4" style="margin: 8px;padding: 0;float: right">
+                <input type="search" class="form-control" placeholder="帅气涛的前端之旅">
+                <span class="glyphicon glyphicon-search form-control-feedback"></span>
+            </div>
+        </div>
+    </div>
+    <!--  以上是导航  -->
+    <br/>
+    <h4 class="video-title">
+        <i class="fa fa-hdd-o"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;从你的全世界路过
+    </h4>
+    <!--  电影名  -->
+    <div class="row">
+        <div class="col-lg-10 video-container">
+            <video
+                    src="video/天将雄师720p.mp4"
+                    class="video"
+                    id="video"
+                    poster="pic/从你的全世界路过.png"
+            ></video>
+            <div class="video-control visible-lg visible-md">
+                <div class="video-range">
+                    <div class="video-range-container">
+                        <div class="video-range-progress"></div>
+                        <div class="video-range-indicator" data-toggle="tooltip" data-original-title="0:0:0"></div>
+                    </div>
+                </div>
+                <time class="video-range-now">
+                    x <span class="playbackRate">1.0</span><br/>
+                    <span class="currTime">2:07:13</span>
+                </time>
+                <div data-action="backward"><i class="fa fa-fast-backward"></i></div>
+                <div data-action="play"><i class="fa fa-play"></i></div>
+                <div data-action="pause"><i class="fa fa-pause"></i></div>
+                <div data-action="forward"><i class="fa fa-fast-forward"></i></div>
+                <div data-action="volume"><i class="fa fa-volume-up"></i></div>
+                <div class="volume-range">
+                    <div class="volume-range-container">
+                        <div class="volume-range-progress"></div>
+                        <!--<div class="volume-range-indicator" data-toggle="tooltip" data-placement="right" data-original-title="50"></div>-->
+                    </div>
+                </div>
+                <div data-action="fullScreen"><i class="fa fa-arrows-alt"></i></div>
+            </div>
+            <!--   电脑端显示视频控件   -->
+            <div class="video-control-phone visible-sm visible-xs">
+                <div data-action="play-phone"><i class="fa fa-play"></i></div>
+                <div class="video-range-phone">
+                    <div class="video-range-phone-container">
+                        <div class="video-range-phone-progress"></div>
+                        <div class="video-range-phone-indicator" data-toggle="tooltip" data-original-title="0:0:0">
+                            <i class="fa fa-long-arrow-up"></i>
+                        </div>
+                    </div>
+                </div>
+                <div><span>2:15:05</span></div>
+                <div data-action="fullScreen"><i class="fa fa-arrows-alt"></i></div>
+            </div>
+            <!--  手机端控件  -->
+        </div>
+        <div class="col-lg-2 visible-lg ">
+            <br/>
+            <label>&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-users"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;演员表</label>
+            <br/><br/><br/>
+            <p class="video-man">
+                &nbsp;<i class="fa fa-mail-forward"></i>邓超
+                <i class="fa fa-user"></i> &nbsp;陈末
+            </p>
+            <p class="video-man">
+                &nbsp;<i class="fa fa-mail-forward"></i>张天爱
+                <i class="fa fa-user"></i> &nbsp;么鸡
+            </p>
+            <p class="video-man">
+                &nbsp;<i class="fa fa-mail-forward"></i>杜鹃
+                <i class="fa fa-user"></i> &nbsp;小容
+            </p>
+            <p class="video-man">
+                &nbsp;<i class="fa fa-mail-forward"></i>岳云鹏
+                <i class="fa fa-user"></i> &nbsp;猪头
+            </p>
+            <p class="video-man">
+                &nbsp;<i class="fa fa-mail-forward"></i>柳岩
+                <i class="fa fa-user"></i> &nbsp;燕子
+            </p>
+            <p class="video-man">
+                &nbsp;<i class="fa fa-mail-forward"></i>杨洋
+                <i class="fa fa-user"></i> &nbsp;茅十八
+            </p>
+            <p class="video-man">
+                &nbsp;<i class="fa fa-mail-forward"></i>白百合
+                <i class="fa fa-user"></i> &nbsp;荔枝
+            </p>
+        </div>
+    </div>
+    <!--  以上是视频区  -->
+    <br/><br/>
+    <div class="row">
+        <div class="col-lg-12">
+            <article>
+                <blockquote>简介：</blockquote>
+                <p class="video-summary">
+                    陈末（邓超 饰）被称为全城最贱，每天和王牌DJ小容（杜鹃 饰）针锋相对，谁也不知道他们的仇恨从何而来。陈末的两个兄弟，分别是全城最傻的猪头（岳云鹏 饰），全城最纯的茅十八（杨洋 饰），三人每天横冲直撞，以为可以自在生活，结果都面临人生最大的转折点。陈末相遇了最神秘的幺鸡（张天爱 饰），猪头打造了最惨烈的婚礼，茅十八经历了最悲伤的别离，这群人的生活一点点崩塌，往事一点点揭开。梦想，爱情，友情都离陈末远去。一个失去所有的人，已经弄丢自己的路，直到听到来自全世界的一段语音……
+                </p>
+            </article>
+        </div>
+    </div>
+    <!--  电影简介-->
+    <br/><br/><br/>
+    <fieldset>
+        <legend>电影这么好，我想说说看</legend>
+        <br/>
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label class="control-label col-lg-2 col-md-2 col-sm-3">xxx到此一游&nbsp;<i class="fa fa-user"></i></label>
+                <div class="col-lg-8 col-md-8 col-sm-8">
+                    <input type="text" class="form-control" placeholder="随便输入一个你喜欢的名字">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-lg-2 col-md-2 col-sm-3">&$%#*!@&nbsp;<i class="fa fa-align-justify"></i></label>
+                <div class="col-lg-8 col-md-8 col-sm-8">
+                    <textarea class="form-control" name="" id="" cols="30" rows="8" placeholder="使用吐槽能量攻击"></textarea>
+                    <div class="button-right">
+                        <button type="reset" class="btn btn-danger">重说</button>
+                        <button class="btn btn-primary">我说一句</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </fieldset>
+    <!--   评论表单  -->
+    <br/><br/>
+    <img src="pic/分割线.png" style="width: 100%;opacity: 0.7"/>
+    <!--   分割条   -->
+    <br/><br/>
+    <div class="row">
+        <div class="col-lg-12 user-comment">
+            <i class="fa fa-tree user-brand"></i>
+            <label class="user-title">小鲜肉</label><br/>
+            <span class="user-info">
+                <i class="fa fa-mobile-phone"></i> - <i><time>2014.11.7</time></i>
+            </span>
+        </div>
+        <br/><br/><br/>
+        <div class="col-lg-12">
+            <p class="user-p">
+                听说所有懂得爱情的人都能在这部电影中找到自己的影子，在自己身边匆匆路过的人，总会留下难以忘记的回忆，即使是受过伤也不想忘记。
+                我希望有个如你一般的人，如山间清爽的风，如古城温暖的光。从清晨到夜晚，由山野到书房。只要最后是你，就好。
+                很喜欢茅十八和荔枝那样纯粹的爱，不计较回报，甚至可以付出生命，也许结局不完美，但是，终究没有错过，不是吗，他们都活在彼此的心理，
+                十年，二十年，五十年，甚至，一辈子。
+            </p>
+            <br/>
+            <p style="text-align: right;padding-right: 2%">
+                <button class="btn btn-default btn-sm"><i class="fa fa-thumbs-up"></i> &nbsp;(10)</button>
+                <a href="#replay1" class="btn btn-default btn-sm" data-toggle="collapse"><i class="fa fa-comment"></i> &nbsp;(2)</a>
+            </p>
+            <div id="replay1" class="collapse">
+                <div class="replay-container">
+                    <input type="text" class="form-control" placeholder="名字">
+                    <textarea cols="30" rows="5" class="form-control" placeholder="想对她（他）说"></textarea>
+                </div>
+                <br/>
+                <article class="replay-on">
+                    <p><i class="fa fa-user"></i> &nbsp;&nbsp;<b>哈哈</b> <i><time>2014-11-7</time></i></p>
+                    <p>我的天，精辟啊</p>
+                </article>
+                <article class="replay-on">
+                    <p><i class="fa fa-user"></i> &nbsp;&nbsp;<b>呵呵</b> <i><time>2014-11-7</time></i></p>
+                    <p>我觉得吧，还是挺不错的，主要是我现在想不出什么词来了，不然的话我一定会大话一番的</p>
+                </article>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="row">
+        <div class="col-lg-12 user-comment">
+            <i class="fa fa-tree user-brand"></i>
+            <label class="user-title">就是累</label><br/>
+            <span class="user-info">
+                <i class="fa fa-desktop"></i> - <i><time>2017.4.2</time></i>
+            </span>
+        </div>
+        <br/><br/><br/>
+        <div class="col-lg-12">
+            <p class="user-p">
+                女人究竟想要什么？你们说的出来吗？那你们又知道男人想要什么吗？你们女人想要的不就只是爱情？
+                要浪漫，要对你好。可我他妈把我所能给的都给你了啊！你却告诉我那不是你想要的。
+            </p>
+            <br/>
+            <p style="text-align: right;padding-right: 2%">
+                <button class="btn btn-default btn-sm"><i class="fa fa-thumbs-up"></i> &nbsp;(32)</button>
+                <a href="#replay2" class="btn btn-default btn-sm" data-toggle="collapse"><i class="fa fa-comment"></i> &nbsp;(2)</a>
+            </p>
+            <div id="replay2" class="collapse">
+                <div class="replay-container">
+                    <input type="text" class="form-control" placeholder="名字">
+                    <textarea cols="30" rows="5" class="form-control" placeholder="想对她（他）说"></textarea>
+                </div>
+                <br/>
+                <article class="replay-on">
+                    <p><i class="fa fa-user"></i> &nbsp;&nbsp;<b>男人</b> <i><time>2017-4-3</time></i></p>
+                    <p>所以说男人别再喝那些贱人炖的鸡汤了，能好就好不能就散，走肾莫走心</p>
+                </article>
+                <article class="replay-on">
+                    <p><i class="fa fa-user"></i> &nbsp;&nbsp;<b>现实</b> <i><time>2017-4-3</time></i></p>
+                    <p>大兄弟别太较真现实的世界得像钱看！！！这个社会就是这么现实少了金钱的爱情你觉得能撑多久？</p>
+                </article>
+            </div>
+        </div>
+    </div>
+    <!--  评论  -->
+    <br/>
+</div>
+<footer class="jumbotron">
+    <label class="footer-info">
+        <i class="fa fa-copyright"></i> &nbsp;皖ICP备16016097号<br/>
+        <i class="fa fa-clock-o"></i> &nbsp;2017.3.31 <i>— 滔涛</i>
+    </label>
+    <label class="footer-info">
+        <i class="fa fa-qq"></i> &nbsp;1941639715<br/>
+        <i class="fa fa-envelope"></i> &nbsp;1941639715@qq.com
+    </label>
+</footer>
+
+<!--  脚注信息  -->
+<div class="modal fade" id="m1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close" data-dismiss="modal">&times;</button>
+                <h4>关于帅气涛</h4>
+            </div>
+            <div class="modal-body">
+                <p>哈哈哈，什么也没有，只知道长得很帅！</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-default"><i class="fa fa-thumbs-up"></i></button>
+                <a href="comment.html" role="button" class="btn btn-default"><i class="fa fa-comments"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+<!--  以上是对话框  -->
+</body>
+</html>

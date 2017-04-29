@@ -1,0 +1,167 @@
+textarea{
+    resize: none;
+}
+.myLife{
+    margin: 20px 0;
+    position: relative;
+}
+.life-item{
+    display: block;
+    position: absolute;
+    color: #37B1B5;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.modal-title{
+    text-align: center;
+}
+.modal-body>p{
+    text-indent: 2em;
+}
+.time, .view{
+    float: left;
+    padding-top: 6px;
+}
+.view{
+    margin-left: 20px;
+}
+.form-horizontal{
+    padding-top: 20px;
+}
+.form-group>div{
+    position: relative;
+}
+.form-group>div>button{
+    position: absolute !important;
+    bottom: 5px;
+    right: 20px;
+    opacity: 0.7;
+}
+.collapse .row{
+    margin: 0;
+}
+.comment-info{
+    text-align: left;
+    padding-top: 20px;
+}
+.comment-info>.col-lg-3{
+    border-bottom: 1px solid silver;
+}
+.comment-info>.col-lg-3 p:nth-child(1){
+    margin: 0;
+}
+.comment-info>.col-lg-9{
+    padding-right: 0;
+}
+.comment-info>.col-lg-9 p{
+    text-indent: 2em;
+}
+
+#item1{
+    top: 8.5%;
+    left: 28%;
+}
+#item2{
+    left: 43%;
+    top: 12%;
+}
+#item3{
+    right: 31%;
+    bottom: 95%;
+}
+#item4{
+    left: 92%;
+    top: 27%;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg);
+    -webkit-transform-origin: left top;
+    -moz-transform-origin: left top;
+    -ms-transform-origin: left top;
+    -o-transform-origin: left top;
+    transform-origin: left top;
+    padding-left: 5px;
+    width: 100px;
+}
+#item5{
+    left: 58%;
+    top: 37.5%;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg);
+    -webkit-transform-origin: left top;
+    -moz-transform-origin: left top;
+    -ms-transform-origin: left top;
+    -o-transform-origin: left top;
+    transform-origin: left top;
+}
+#item6{
+    left: 41.5%;
+    top: 60.3%;
+}
+#item7{
+    bottom: 54%;
+    right: 84%;
+}
+#item8{
+    left: 77%;
+    top: 40.5%;
+}
+#item9{
+    left: 70.5%;
+    top: 35.5%;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg);
+    -webkit-transform-origin: left top;
+    -moz-transform-origin: left top;
+    -ms-transform-origin: left top;
+    -o-transform-origin: left top;
+    transform-origin: left top;
+}
+.no-write{
+    color: black;
+}
+
+#sentence{
+    width: 60%;
+    position: absolute;
+    left: 20%;
+    bottom: 15.5%;
+    color: #37B1B5;
+    text-indent: 2em;
+}
+#sentence>cite{
+    float: right;
+    margin-top: 10px;
+}
+
+@media screen and (max-width: 768px){
+    .navbar-brand::after{
+        content: '未来已来，你来不来';
+        font-size: 12px;
+        font-style: italic;
+        opacity: 0.8;
+        position: relative;
+        top: -5px;
+        left: 10px;
+    }
+    .life-item{
+        font-size: 8px;
+    }
+    .form-group{
+        text-align: left;
+    }
+    #sentence{
+        font-size: 12px;
+    }
+}
