@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>滔涛的生活</title>
+    <link rel="SHORTCUT ICON" href="pic/china.ico"/>
+    <link rel="stylesheet" href="奥森字体4.2.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/tongY.css">
+    <link rel="stylesheet" href="css/life.css">
+    <script type="text/javascript" src="js/jquery-3.1.0.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script src="js/loadMusic.js"></script>
+    <script src="js/life.js"></script>
+</head>
+<body>
+<hr id="top"/>
+<div class="container">
+    <div class="navbar navbar-default" style="border: none;margin: 0">
+        <div class="navbar-header">
+            <a href="index.html" class="navbar-brand" data-skip="true">
+                <i class="fa fa-leaf" style="font-size: 25px" data-skip="true"></i>
+            </a>
+            <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse navbar-responsive-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="note.html" data-skip="true">笔记</a></li>
+                <li>
+                    <a href="show.html" data-toggle="dropdown">展示<i class="fa fa-sort-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="show.html#jp" data-skip="true">jquery+php</a></li>
+                        <li><a href="show.html#cw" data-skip="true">classWork</a></li>
+                        <li class="divider"></li>
+                        <li><a href="show.html#mzh" data-skip="true">Mr.Zhang homework</a></li>
+                    </ul>
+                </li>
+                <li><a href="life.html" class="currAnchor" data-skip="true">生活</a></li>
+                <li><a href="#m1" data-toggle="modal">关于我</a></li>
+                <li>
+                </li>
+            </ul>
+            <div class="has-feedback col-xs-12 col-sm-4 col-md-4 col-lg-4" style="margin: 8px;padding: 0;float: right">
+                <input type="search" class="form-control" placeholder="帅气涛的前端之旅">
+                <span class="glyphicon glyphicon-search form-control-feedback"></span>
+            </div>
+        </div>
+    </div>
+    <!--  以上是导航  -->
+    <div class="myLife">
+        <img src="pic/m4.png" alt="" class="img-responsive" usemap="#shiGuangZhou">
+        <map name="shiGuangZhou" id="shiGuangZhou">
+            <area shape="poly" coords="30,0,60,40,0,40" />
+        </map>
+        <span class="life-item" id="item1">2017-2-28</span>
+        <span class="life-item" id="item2">2017-2-12</span>
+        <span class="life-item" id="item3">2017-1-30</span>
+        <span class="life-item" id="item4">2017-1-5</span>
+        <span class="life-item" id="item5">2017-4-7</span>
+        <span class="life-item no-write" id="item6">2017-5-7</span>
+        <span class="life-item no-write" id="item7">2017-6-7</span>
+        <span class="life-item no-write" id="item8">2017-7-7</span>
+        <span class="life-item no-write" id="item9">2017-8-8</span>
+
+        <p id="sentence">
+            如果生活给了你一个柠檬，何不晒干它，日后再用来泡一杯清爽的柠檬茶呢
+            <cite>——滔涛</cite>
+        </p>
+    </div>
+</div>
+<footer class="jumbotron">
+    <label class="footer-info">
+        <i class="fa fa-copyright"></i> &nbsp;皖ICP备16016097号<br/>
+        <i class="fa fa-clock-o"></i> &nbsp;2017.3.31 <i>— 滔涛</i>
+    </label>
+    <label class="footer-info">
+        <i class="fa fa-qq"></i> &nbsp;1941639715<br/>
+        <i class="fa fa-envelope"></i> &nbsp;1941639715@qq.com
+    </label>
+</footer>
+<!--  脚注信息  -->
+<div class="modal fade" id="m1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close" data-dismiss="modal">&times;</button>
+                <h4>关于帅气涛</h4>
+            </div>
+            <div class="modal-body">
+                <p>哈哈哈，什么也没有，只知道长得很帅！</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-default" id="thank-btn"><i class="fa fa-thumbs-up"></i></button>
+                <a href="comment.html" class="btn btn-default" data-skip="true"><i class="fa fa-comments"></i></a>
+                <div class="collapse" id="thank" style="text-align: center">
+                    <img src="pic/跪谢.gif" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--  以上是对话框，关于我  -->
+<div class="modal fade" id="article">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">
+                    <span></span>
+                    <button class="close" data-dismiss="modal">&times;</button>
+                </h4>
+            </div>
+            <div class="modal-body">
+                <p></p>
+                <p></p>
+            </div>
+            <div class="modal-footer">
+                    <span class="time">
+                        <i class="fa fa-clock-o"></i>
+                        <sub></sub>
+                    </span>
+                <span class="view">
+                        <i class="fa fa-eye"></i>
+                        <sub></sub>
+                    </span>
+                <button class="comment btn btn-default" data-toggle="collapse" data-target="#collapse">
+                    <i class="fa fa-comment-o"></i>
+                    <sub></sub>
+                </button>
+                <div class="collapse" id="collapse">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label class="control-label col-lg-3 col-md-3 col-sm-3">尊姓大名：</label>
+                            <div class="col-lg-9 col-md-9 col-sm-9">
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-lg-3 col-md-3 col-sm-3">谈天说地：</label>
+                            <div class="col-lg-9 col-md-9 col-sm-9">
+                                <textarea  cols="30" rows="10" class="form-control"></textarea>
+                                <button class="btn-default btn btn-sm">某子曰</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--  模态框，我的文章  -->
+<audio src="video/我的狐仙老婆.mp3" loop></audio>
+</body>
+</html>
