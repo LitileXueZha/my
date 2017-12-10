@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>个人简历</title>
+    <script src="http://os9h9t8fk.bkt.clouddn.com/react.development.js"></script>
+    <script src="http://os9h9t8fk.bkt.clouddn.com/react-dom.development.js"></script>
+    <script src="http://os9h9t8fk.bkt.clouddn.com/babel.min.js"></script>
+    <style media="screen">
+      *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-size: 14px;
+        font-family: 微软雅黑;
+        color: #777;
+      }
+
+      /* 背景渐变 */
+      body{
+        background: -webkit-linear-gradient(left bottom, #c46474, #e2a1bb);
+        background: -moz-linear-gradient(left bottom, #c46474, #e2a1bb);
+        background: -o-linear-gradient(left bottom, #c46474, #e2a1bb);
+        background: linear-gradient(left bottom, #c46474, #e2a1bb);
+        padding: 100px 0;
+      }
+
+      #root{
+        background-color: #fefefe;
+        margin: 0 auto;
+        padding: 100px;
+        border-radius: 1px;
+        -webkit-box-shadow: -60px 100px 100px #9c4c5a;
+        -moz-box-shadow: -60px 100px 100px #9c4c5a;
+        -ms-box-shadow: -60px 100px 100px #9c4c5a;
+        -o-box-shadow: -60px 100px 100px #9c4c5a;
+        box-shadow: -60px 100px 100px #9c4c5a;
+        transition: 1s;
+      }
+
+      /* 布局容器 */
+      .resume-container{
+        display: flex;
+      }
+      .resume-container>.resume-col-left{
+        flex: 1;
+        padding-bottom: 50px;
+      }
+      .resume-container>.resume-col-right{
+        width: 270px;
+        border-left: 1px solid #e9e9e9;
+        margin-top: -100px;
+        padding-top: 112px;
+        margin-left: 100px;
+        padding-left: 50px;
+      }
+
+      /* 头部信息 */
+      .resume-header{
+        width: 100%;
+        display: flex;
+        align-items: center;
+      }
+      .resume-header>img{
+        width: 100px;
+        height: 100px;
+        margin-right: 20px;
+      }
+      .resume-header>.resume-header-content{
+        flex: 1;
+      }
+      .resume-header>.resume-header-content>.title{
+        font-weight: 500;
+        color: #000;
+        margin-bottom: 8px;
+        font-size: 24px;
+      }
+      .resume-header>.resume-header-content>.role{
+        color: #d28093;
+        margin-bottom: 2px;
+      }
+      .resume-header>.resume-header-content>.location{
+        /*color: #666;*/
+      }
+      .resume-header>.resume-header-content>.location::before{
+        content: '';
+        background-image: url('http://oyskbfna4.bkt.clouddn.com/icon.png?d=d');
+        background-position-y: -30px;
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        margin-right: 5px;
+        position: relative;
+        left: 2px;
+        top: 1px;
+      }
+
+      /* 主体信息 */
+      .resume-body{
+        margin-top: 80px;
+      }
+      /* 每一个模块 */
+      .item{
+        margin-bottom: 80px;
+      }
+      .item>.item-title{
+        font-size: 22px;
+        font-weight: 500;
+        color: #c46474;
+        margin-bottom: 40px;
+      }
+      .item>.item-content{
+        border-left: 1px solid #e9e9e9;
+        padding-left: 43px;
+      }
+
+      /* 每一模块中的条目 */
+      .item-exp{
+        margin-bottom: 60px;
+      }
+      .item-exp>.item-exp-name{
+        font-weight: 500;
+        color: #000;
+      }
+      .item-exp>.item-exp-time{
+        display: block;
+        margin-top: 2px;
+        margin-bottom: 8px;
+        color: #e2a1bb;
+      }
+      .item-exp>.item-exp-content{
+        /*color: #666;*/
+      }
+
+      /* 侧边栏条目 */
+      .item-right{
+        margin-bottom: 100px;
+      }
+      .item-right>.item-right-title{
+        display: block;
+        font-size: 22px;
+        font-weight: 500;
+        color: #c46474;
+        margin-bottom: 20px;
+      }
+      .item-right>.item-right-p{
+        /*color: #666;*/
+        margin-bottom: 2px;
+      }
+      .item-right-p-label{
+        display: none;
+      }
+
+      /* 进度条 */
+      .progress-container{
+        margin-bottom: 20px;
+      }
+      .progress-container>.progress-text{
+        /*color: #666;*/
+        display: block;
+        margin-bottom: 5px;
+      }
+      .progress-container>.progress-total{
+        height: 2px;
+        background-color: #e9e9e9;
+        position: relative;
+      }
+      .progress-container>.progress-total>.progress-value{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: #c46474;
+        transition: 1s;
+      }
+
+      /* 脚注信息 */
+      .resume-footer{
+        border-top: 1px solid #e9e9e9;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: -100px;
+        margin-top: 0;
+        height: 100px;
+      }
+      .resume-footer>a:first-of-type{
+        text-decoration: none;
+        color: #1989fa;
+        margin-right: 608px;
+        font-size: 12px;
+      }
+      .resume-footer>.mail, .resume-footer>.github, .resume-footer>.qq{
+        width: 30px;
+        height: 30px;
+        margin-right: 15px;
+        background-image: url('http://oyskbfna4.bkt.clouddn.com/icon.png?d=d');
+      }
+      .resume-footer>.mail{
+        background-position-x: 0;
+      }
+      .resume-footer>.github{
+        background-position-x: -30px;
+      }
+      .resume-footer>.qq{
+        background-position-x: -60px;
+      }
+
+      /* 切换中英文按钮 */
+      .btn-lang{
+        position: fixed;
+        right: 40px;
+        bottom: 40px;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        border: none;
+        outline: none;
+        font-size: 12px;
+        background-color: #d28093;
+        color: #fff;
+        cursor: pointer;
+        box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 30px, rgba(0, 0, 0, 0.23) 0px 6px 10px;
+      }
+    </style>
+
+    <!-- a4: 210x297 -->
+
+    <!-- 大屏样式，默认，再渐进增强 -->
+    <style media="screen">
+      #root{
+        max-width: 1170px;
+      }
+    </style>
+
+    <!-- 小笔记本样式 -->
+    <style media="screen">
+      @media (min-width: 992px) and (max-width: 1366px) {
+        #root, .resume-col-right, .resume-footer, .resume-footer>a:first-of-type, .resume-body, .item, .item-right{
+          transition: .5s;
+        }
+        #root{
+          max-width: 970px;
+          padding: 80px;
+        }
+        .resume-container>.resume-col-right{
+          width: 250px;
+          margin-left: 80px;
+          margin-top: -80px;
+          padding-top: 92px;
+        }
+        .resume-footer{
+          height: 80px;
+          margin: -80px;
+          margin-top: 0;
+        }
+        .resume-footer>a:first-of-type{
+          margin-right: 452px;
+        }
+        .resume-body{
+          margin-top: 60px;
+        }
+        .item{
+          margin-bottom: 60px;
+        }
+        .item-right{
+          margin-bottom: 80px;
+        }
+      }
+    </style>
+
+    <!-- 平板样式 -->
+    <style media="screen">
+      @media (min-width: 768px) and (max-width: 992px) {
+        #root, .resume-col-right, .resume-footer, .resume-footer>a:first-of-type, .resume-body, .item, .item-right{
+          transition: .5s;
+        }
+        #root{
+          max-width: 760px;
+          padding: 60px;
+          padding-top: 50px;
+        }
+        .resume-container>.resume-col-right{
+          width: 190px;
+          margin-left: 40px;
+          margin-top: -50px;
+          padding-top: 62px;
+          padding-left: 30px;
+        }
+        .item-right{
+          margin-bottom: 60px;
+        }
+        .resume-footer{
+          height: 60px;
+          margin: -60px;
+          margin-top: 0;
+        }
+        .resume-body{
+          margin-top: 30px;
+        }
+        .item{
+          margin-bottom: 30px;
+        }
+        .item>.item-title{
+          margin-bottom: 15px;
+        }
+        .item>.item-content{
+          padding-left: 27px;
+        }
+        .item-exp{
+          margin-bottom: 30px;
+        }
+        .item>.item-title, .item-right>.item-right-title{
+          font-size: 20px;
+        }
+        .resume-container>.resume-col-left{
+          padding-bottom: 30px;
+        }
+        .resume-footer>a:first-of-type{
+          margin-right: 346px;
+        }
+        .resume-footer>.mail, .resume-footer>.github, .resume-footer>.qq{
+          margin-right: 0;
+          -webkit-transform: scale(0.7);
+          -moz-transform: scale(0.7);
+          -ms-transform: scale(0.7);
+          -o-transform: scale(0.7);
+          transform: scale(0.7);
+        }
+      }
+    </style>
+
+    <!-- 手机样式 -->
+    <style media="screen">
+      @media (max-width: 768px) {
+        body{
+          background: none;
+          padding: 0;
+        }
+        #root{
+          padding: 20px;
+        }
+        .resume-footer{
+          display: block;
+          margin: -20px;
+          padding: 12px 20px;
+          height: auto;
+        }
+        .resume-footer>a:first-of-type{
+          margin-right: 0;
+          line-height: 20px;
+        }
+        .resume-footer>a:nth-child(n+2){
+          display: inline-block;
+          float: right;
+          margin-right: 0;
+          -webkit-transform: scale(0.68);
+          -moz-transform: scale(0.68);
+          -ms-transform: scale(0.68);
+          -o-transform: scale(0.68);
+          transform: scale(0.68);
+          position: relative;
+          top: -5px;
+        }
+        .resume-footer>a:nth-child(2){
+          margin-right: -5px;
+        }
+        .btn-lang{
+          top: 45%;
+          right: 10px;
+        }
+        .resume-container{
+          display: block;
+        }
+        .resume-body{
+          margin-top: 40px;
+        }
+        .item, .item-right{
+          margin-bottom: 40px;
+        }
+        .item-right:last-of-type{
+          margin-bottom: 80px;
+        }
+        .item>.item-title, .item-exp{
+          margin-bottom: 20px;
+        }
+        .item>.item-content{
+          border: none;
+          padding-left: 0;
+        }
+        .item-exp>.item-exp-time{
+          margin-top: -2px;
+          margin-bottom: 5px;
+        }
+        .resume-container>.resume-col-left{
+          padding-bottom: 0;
+        }
+        .resume-container>.resume-col-right{
+           width: 100%;
+           border-left: none;
+           margin-top: 0;
+           padding-top: 0;
+           margin-left: 0;
+           padding-left: 0;
+        }
+        .item-right-p-label{
+          display: inline;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <!-- 定义中英文数据 -->
+    <script type="text/babel">
+      const data = {
+        details: ['1996.06.26', '17679069513', '18255447846@163.com'],
+        expertise: [
+          ['Html', 90], ['Css', 82], ['JavaScript', 92], ['Php', 15], ['Linux', 18], ['NodeJS', 25], ['React Native', 25],
+        ],
+        zh: {
+          title: ['个人资料', '工作经历', '教育经历、校内实践', '详细信息', '专业技能', '爱好'],
+          header: {
+            name: '宁涛',
+            role: '前端开发工程师',
+            location: '江苏，南京',
+          },
+          profile: '学习前端基础一年，对Html5、CSS3、ES6很熟悉，能够熟练应用JQuery、Bootstrap框架，热衷于开发响应式界面以及兼容式代码，有望前端能一统江湖；喜欢在Linux系统下开发，能够运用PHP、NodeJS，和后台交互无障碍，熟悉Git流团队开发，能够快速上手公司项目，有志在公司发展。',
+          experience: [
+            {
+              name: '焦点科技 - 新一站保险代理股份有限公司',
+              time: '2017.07 - 至今',
+              content: '独立完成内部系统开发。前端界面使用基于React的Dva搭建，UI框架使用Ant Design；同时在完全不清楚NodeJS的情况下，花了一个月的时间熟悉Dva+NodeJS+MongoDB技术栈，接下来的一个月内完成了该系统开发，并将其部署到公司内部服务器上。独立完成新一站保险故事小程序开发，需要适配手机端不同分辨率，采用渐进增强，优雅降级的方式完成视觉稿方案。',
+            },
+            {
+              name: '上海凸赞科技 - 淮南分公司',
+              time: '2017.02 – 2017.07',
+              content: '公司主营小程序，当时负责一个南通小程序，主要是拍照上传，捐衣服，积分兑换功能。在这里学了很多，有来自百度和FreeWheel的顶级后台工程师亲自教导，感觉受益良多，在和他们的交互中开阔眼界，了解到Restful API和Swagger UI等等，为以后学习的道路打下了坚实的基础',
+            },
+          ],
+          education: [
+            {
+              name: '安徽理工大学 - 数学与大数据学院 - 信息与计算科学',
+              time: '2014.09 – 至今',
+              content: ['参与过学院官网导航部分重构，并且需要兼容IE6/7/8浏览器，使用过几种hack方案解决不兼容bug。', '学校知通团队外包项目Web App，采用了Frozen UI框架，根据草稿完成前端界面和逻辑处理开发。'],
+            },
+          ],
+          details: ['江西，吉安'],
+          detailsKey: ['生日：', '故乡：', '手机：', '邮箱：'],
+          hobbies: [
+            ['看动漫', 30], ['打游戏', 35], ['学技术、编程', 65], ['写出响应式、漂亮的界面', 100],
+          ],
+        },
+        en: {
+          title: ['Profile', 'Experience', 'Education', 'Details', 'Expertise', 'Hobbies'],
+          header: {
+            name: 'Tao Ning',
+            role: 'Front-end Engineer',
+            location: 'Jiang Su, Nan Jing',
+          },
+          profile: 'I have learnt the basic of front-end about 1 year and am familiar with Html5, Css3 and ES6. I am skilled in using jQuery and Bootstrap Framework, high on developing responsive interface. It is comfortable for me to develop on Linux system and use Git when working with team.',
+          experience: [
+            {
+              name: 'XinYiZhan Insurance Agency Co., Ltd',
+              time: '2017.07 - Present',
+              content: 'Spending one month learning the technology stack, completing internal system all alone in the next month. ',
+            },
+            {
+              name: 'Shang Hai Tu Zan Co., Ltd',
+              time: '2017.02 – 2017.07',
+              content: 'I am responsible for a Nan Tong mini program which can upload photos, donate cloths and exchange bounds. ',
+            },
+            {
+              name: 'Campus Practice',
+              time: '2016.10 – 2017.03',
+              content: 'Redesign the website navigation of our academy which could run at IE6/7/8. ',
+            },
+          ],
+          education: [
+            {
+              name: 'Information and Computing Sciences',
+              time: '2014.09 – Present',
+              content: ['ANHUI University of Science & Technology'],
+            },
+          ],
+          details: ['Jiang Xi, Ji An'],
+          detailsKey: ['Birthday: ', 'Hometown: ', 'Phone: ', 'Email: '],
+          hobbies: [
+            ['Watch animation', 30], ['Play game', 35], ['Learn Technology', 65], ['Write great interface', 100],
+          ],
+        },
+      };
+    </script>
+    <script type="text/babel">
+        // 头部组件
+        class HeaderComponent extends React.Component {
+          render() {
+            const { name, role, location } = this.props;
+            return (
+              <header className="resume-header">
+                <img src="http://oyskbfna4.bkt.clouddn.com/%E5%A4%B4%E5%83%8F.png" alt="头像" />
+                <div className="resume-header-content">
+                  <h2 className="title">{name}</h2>
+                  <p className="role">{role}</p>
+                  <span className="location">{location}</span>
+                </div>
+              </header>
+            );
+          }
+        }
+
+        //  个人简介
+        class ProfileComponent extends React.Component {
+          render() {
+            return (
+              <figure className="item">
+                <figcaption className="item-title">{this.props.title}</figcaption>
+                <div className="item-content">{this.props.profile}</div>
+              </figure>
+            );
+          }
+        }
+
+        //  工作经历
+        class ExperienceComponent extends React.Component {
+          render() {
+            return (
+              <figure className="item">
+                <figcaption className="item-title">{this.props.title}</figcaption>
+                <div className="item-content">
+                  { this.props.experience.map(x => (
+                    <div key={x.name} className="item-exp">
+                      <strong className="item-exp-name">{x.name}</strong>
+                      <time className="item-exp-time">{x.time}</time>
+                      <p className="item-exp-content">{x.content}</p>
+                    </div>
+                  )) }
+                </div>
+              </figure>
+            );
+          }
+        }
+
+        //  教育经历
+        class EducationComponent extends React.Component {
+          render() {
+            return (
+              <figure className="item">
+                <figcaption className="item-title">{this.props.title}</figcaption>
+                <div className="item-content">
+                { this.props.education.map(x => (
+                  <div key={x.name} className="item-exp">
+                    <strong className="item-exp-name">{x.name}</strong>
+                    <time className="item-exp-time">{x.time}</time>
+                    { x.content.map(y => <p className="item-exp-content" key={y}>{y}</p>) }
+                  </div>
+                )) }
+                </div>
+              </figure>
+            );
+          }
+        }
+
+        //  详细信息
+        class DetailComponent extends React.Component {
+          render() {
+            const { title, details, detailsKey, commonDetails } = this.props;
+            const arr = [...commonDetails];
+            arr.splice(1, 0, details);
+            return (
+              <section className="item-right">
+                <strong className="item-right-title">{this.props.title}</strong>
+                { arr.map((x, i) => <p className="item-right-p" key={x}><span className="item-right-p-label">{detailsKey[i]}</span>{x}</p>) }
+              </section>
+            );
+          }
+        }
+
+        //  进度条
+        class Progress extends React.Component {
+          render() {
+            return (
+              <div className="progress-container">
+                <span className="progress-text">{this.props.text}</span>
+                <div className="progress-total"><div className="progress-value" style={{ width: `${this.props.value}%` }} /></div>
+              </div>
+            );
+          }
+        }
+
+        //  专业技能
+        class ExpertiseComponent extends React.Component {
+          render() {
+            return (
+              <section className="item-right">
+                <strong className="item-right-title">{this.props.title}</strong>
+                { this.props.expertise.map(x => <Progress key={x[0]} text={x[0]} value={x[1]} />) }
+              </section>
+            );
+          }
+        }
+
+        //  爱好
+        class HobbyComponent extends React.Component {
+          render() {
+            return (
+              <section className="item-right">
+                <strong className="item-right-title">{this.props.title}</strong>
+                { this.props.hobbies.map(x => <Progress key={x[0]} text={x[0]} value={x[1]} />) }
+              </section>
+            );
+          }
+        }
+
+        //  脚处信息
+        class FooterComponent extends React.Component {
+          render() {
+            return (
+              <footer className="resume-footer">
+                <a href="#">ningtaostudy.cn/resume</a>
+                <a href="mailto:18255447846@163.com" className="mail" />
+                <a href="https://github.com/LitileXueZha" className="github" target="_blank" />
+                <a href="http://wpa.qq.com/msgrd?v=3&uin=1941639715&site=qq&menu=yes" className="qq" target="_blank" />
+              </footer>
+            );
+          }
+        }
+
+        //  外部容器，切换中英文
+        class ProviderComponent extends React.Component {
+          constructor(props) {
+            super(props);
+            this.state = {
+              lang: 'zh',
+            };
+          }
+
+          //  切换中英文
+          changeLang() {
+            this.setState({
+              lang: this.state.lang === 'zh' ? 'en' : 'zh',
+            });
+          }
+
+          render() {
+            const { lang } = this.state;
+            const { header, profile, title, experience, education, details, detailsKey, hobbies } = data[lang];
+            return [
+              <div className="resume-container" key="1">
+                <div className="resume-col-left">
+                  <HeaderComponent {...header} />
+                  <div className="resume-body">
+                    <ProfileComponent profile={profile} title={title[0]} />
+                    <ExperienceComponent experience={experience} title={title[1]} />
+                    <EducationComponent education={education} title={title[2]} />
+                  </div>
+                </div>
+                <div className="resume-col-right">
+                  <DetailComponent title={title[3]} details={details} detailsKey={detailsKey} commonDetails={data.details} />
+                  <ExpertiseComponent title={title[4]} expertise={data.expertise}/>
+                  <HobbyComponent title={title[5]} hobbies={hobbies}/>
+                </div>
+              </div>,
+              <FooterComponent key="2" />,
+              <button className="btn-lang" onClick={() => this.changeLang()} key="3">{lang === 'zh' ? 'English' : '中文'}</button>,
+            ];
+          }
+        }
+    </script>
+    <script type="text/babel">
+      ReactDOM.render(<ProviderComponent />, document.querySelector('#root'));
+    </script>
+  </body>
+</html>
