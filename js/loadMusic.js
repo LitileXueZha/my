@@ -6,7 +6,7 @@ function loadBGM() {
     if(navigator.userAgent.indexOf('Android') < 0){
         var audio = document.createElement('audio'),
             now = sessionStorage.getItem('currAudioProgress');
-        audio.src = 'video/我的狐仙老婆.mp3';
+        audio.src = 'video/myFoxPerfectWife.mp3';
         audio.loop = true;
         audio.autoplay = true;
         audio.volume = 0.4;
