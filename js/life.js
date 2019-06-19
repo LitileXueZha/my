@@ -69,9 +69,6 @@ var s1 = '<div class="comment-info row"> <div class="col-lg-3 col-md-3 col-sm-3"
 
 
 $(document).ready(function () {
-
-    loadBGM();
-    //  加载背景音乐
     $('#thank-btn').click(function () {
         $('#thank').collapse();
     });

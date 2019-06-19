@@ -2,8 +2,6 @@
  * Created by 战-不败的象征 on 2017/4/6.
  */
 $(document).ready(function () {
-
-    loadBGM();
     $('#thank-btn').click(function () {
         $('#thank').collapse();
     });

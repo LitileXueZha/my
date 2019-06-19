@@ -27,3 +27,4 @@ function loadBGM() {
     //  页面跳转音乐不间断
 }
 //  加载背景音乐
+$(document).ready(loadBGM)

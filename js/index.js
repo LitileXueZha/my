@@ -2,9 +2,6 @@
  * Created by 战-不败的象征 on 2017/3/31.
  */
 $(document).ready(function () {
-
-    loadBGM();
-    //  加载背景音乐
     $('#thank-btn').click(function () {
         $('#thank').collapse();
     });
