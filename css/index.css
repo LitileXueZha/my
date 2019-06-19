@@ -147,7 +147,7 @@ hr{
     background: radial-gradient(rgba(0, 0, 0, 0.2), rgba(0,0,0,0.1), white);
 }
 .js-list{
-    list-style-image: url("../pic/右脚.png");
+    list-style-image: url("../pic/icon-foot-right.png");
 }
 .js-list-item{
     padding: 5px;
