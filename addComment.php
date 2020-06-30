@@ -6,7 +6,7 @@
  * Time: 10:31
  */
 
-$mysqli = new mysqli('localhost', 'root', '19960626', 'my');
+$mysqli = new mysqli('localhost', '***', '***', '**');
 if(mysqli_connect_errno()){
     die('数据库加载失败！');
 } else{
@@ -28,6 +28,6 @@ if(mysqli_connect_errno()){
         $_POST['id'].'",0)';
     $mysqli -> query($query);
 
-    move_uploaded_file($_FILES['img']['tmp_name'], 'C:/wamp64/www/my/upload/'. $name);
+    move_uploaded_file($_FILES['img']['tmp_name'], '***'. $name);
     echo $name;
 }

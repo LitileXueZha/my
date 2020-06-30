@@ -6,7 +6,7 @@
  * Time: 12:33
  */
 
-$mysqli = new mysqli('localhost','***','******','*');
+$mysqli = new mysqli('localhost','***','***','*');
 $data = '';
 
 if(mysqli_connect_errno()){
